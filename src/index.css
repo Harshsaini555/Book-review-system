@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee 15s linear infinite;
+  animation-delay: 7.5s;
+}
+
+
+
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 20 14% 24%;
+    --primary: 35 37% 45%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 40 13% 90%;
+    --secondary-foreground: 20 14% 24%;
+    --muted: 40 13% 90%;
+    --muted-foreground: 20 14% 44%;
+    --accent: 35 37% 45%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 33% 98%;
+    --border: 20 14% 84%;
+    --input: 20 14% 84%;
+    --ring: 35 37% 45%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 40% 12%;
+    --foreground: 40 33% 98%;
+    --primary: 35 37% 45%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 224 30% 20%;
+    --secondary-foreground: 40 33% 98%;
+    --muted: 224 30% 20%;
+    --muted-foreground: 40 33% 88%;
+    --accent: 35 37% 45%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 33% 98%;
+    --border: 224 30% 24%;
+    --input: 224 30% 24%;
+    --ring: 35 37% 45%;
+  }
+}
+@layer utilities {
+  /* Background colors */
+  .bg-background          { background-color: hsl(var(--background)); }
+  .bg-primary             { background-color: hsl(var(--primary)); }
+  .bg-secondary           { background-color: hsl(var(--secondary)); }
+  .bg-muted               { background-color: hsl(var(--muted)); }
+  .bg-accent              { background-color: hsl(var(--accent)); }
+  .bg-destructive         { background-color: hsl(var(--destructive)); }
+
+  /* Text colors */
+  .text-foreground        { color: hsl(var(--foreground)); }
+  .text-primary-foreground{ color: hsl(var(--primary-foreground)); }
+  .text-secondary-foreground { color: hsl(var(--secondary-foreground)); }
+  .text-muted-foreground  { color: hsl(var(--muted-foreground)); }
+  .text-accent-foreground { color: hsl(var(--accent-foreground)); }
+  .text-destructive-foreground { color: hsl(var(--destructive-foreground)); }
+
+  /* Border & ring colors */
+  .border-border          { border-color: hsl(var(--border)); }
+  .border-input           { border-color: hsl(var(--input)); }
+  .ring-ring              { --tw-ring-color: hsl(var(--ring)); }
+
+  /* Radius */
+  .rounded-radius         { border-radius: var(--radius); }
+}
+
+
+
+
